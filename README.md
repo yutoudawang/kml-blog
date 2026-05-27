@@ -8,12 +8,12 @@
 2. 把本目录内容提交并推送到该仓库。
 3. 进入仓库 `Settings` -> `Pages`。
 4. Source 选择 `Deploy from a branch`，Branch 选择 `main`，目录选择 `/root`。
-5. Custom domain 填写 `kml.中国`。如果 GitHub 不接受中文形式，填写 `kml.xn--fiqs8s`。
+5. Custom domain 填写 `yutoudawang.com`。
 6. 等待 GitHub Pages 部署完成，再回到域名 DNS 控制台添加解析。
 
 ## DNS 解析
 
-如果使用裸域名 `kml.中国`，在阿里云 DNS 添加 4 条 A 记录：
+如果使用裸域名 `yutoudawang.com`，在域名 DNS 控制台添加 4 条 A 记录：
 
 ```text
 主机记录: @    记录类型: A    记录值: 185.199.108.153
@@ -22,10 +22,10 @@
 主机记录: @    记录类型: A    记录值: 185.199.111.153
 ```
 
-如果同时使用 `www.kml.中国`，添加一条 CNAME：
+如果同时使用 `www.yutoudawang.com`，添加一条 CNAME：
 
 ```text
-主机记录: www    记录类型: CNAME    记录值: 你的GitHub用户名.github.io
+主机记录: www    记录类型: CNAME    记录值: yutoudawang.github.io
 ```
 
 DNS 生效后，在 GitHub Pages 设置中开启 `Enforce HTTPS`。
