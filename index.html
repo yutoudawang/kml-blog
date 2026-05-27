@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KML 技术博客</title>
+    <meta
+      name="description"
+      content="聚焦机器视觉、机械设计、电气控制的工程技术博客。"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="KML 技术博客首页">KML</a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="#vision">机器视觉</a>
+        <a href="#mechanical">机械设计</a>
+        <a href="#electrical">电气控制</a>
+        <a href="#about">关于</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">工程实践 · 项目复盘 · 技术笔记</p>
+          <h1>机器视觉、机械设计与电气控制的个人技术博客</h1>
+          <p class="hero-text">
+            记录自动化项目里的选型、设计、调试、踩坑和复盘，沉淀可以反复使用的工程经验。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#sections">查看分类</a>
+            <a class="button secondary" href="#latest">最新文章</a>
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="博客主题概览">
+          <div class="panel-row">
+            <span>Vision</span>
+            <strong>相机 · 镜头 · 光源 · 算法</strong>
+          </div>
+          <div class="panel-row">
+            <span>Design</span>
+            <strong>结构 · 选型 · CAD · 非标</strong>
+          </div>
+          <div class="panel-row">
+            <span>Control</span>
+            <strong>PLC · 伺服 · 传感器 · 通讯</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="latest">
+        <div class="section-heading">
+          <p class="eyebrow">Latest</p>
+          <h2>最新文章</h2>
+        </div>
+        <div class="article-list">
+          <article class="article-item">
+            <time datetime="2026-05-27">2026-05-27</time>
+            <h3><a href="#">博客搭建计划：先把三个技术方向跑起来</a></h3>
+            <p>第一版先完成分类、文章模板和 GitHub Pages 部署，后续再补充搜索、评论和项目页。</p>
+          </article>
+          <article class="article-item">
+            <time datetime="2026-05-27">2026-05-27</time>
+            <h3><a href="#">机器视觉文章模板</a></h3>
+            <p>建议每篇文章固定记录应用场景、硬件配置、光源方案、算法流程、调试结论。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="sections">
+        <div class="section-heading">
+          <p class="eyebrow">Categories</p>
+          <h2>技术板块</h2>
+        </div>
+        <div class="category-grid">
+          <article class="category-card" id="vision">
+            <span class="category-index">01</span>
+            <h3>机器视觉</h3>
+            <p>相机、镜头、光源、采集卡、标定、图像处理算法、缺陷检测和项目复盘。</p>
+            <ul>
+              <li>工业相机与镜头选型</li>
+              <li>光源方案与打光测试</li>
+              <li>OpenCV / Halcon / 深度学习</li>
+            </ul>
+          </article>
+          <article class="category-card" id="mechanical">
+            <span class="category-index">02</span>
+            <h3>机械设计</h3>
+            <p>非标自动化结构、机构设计、材料工艺、传动选型、CAD 建模和设计校核。</p>
+            <ul>
+              <li>夹治具与定位机构</li>
+              <li>电机、丝杆、导轨选型</li>
+              <li>装配、加工与维护性设计</li>
+            </ul>
+          </article>
+          <article class="category-card" id="electrical">
+            <span class="category-index">03</span>
+            <h3>电气控制</h3>
+            <p>PLC、伺服、步进、传感器、变频器、HMI、通讯协议和现场调试记录。</p>
+            <ul>
+              <li>PLC 程序结构</li>
+              <li>伺服调试与运动控制</li>
+              <li>Modbus / Ethernet/IP / 串口通讯</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section about" id="about">
+        <div class="section-heading">
+          <p class="eyebrow">About</p>
+          <h2>关于这个博客</h2>
+        </div>
+        <p>
+          这里会持续整理自动化相关的工程笔记。文章优先解决具体问题：为什么这样选型、参数怎么确定、现场怎么验证、失败原因是什么。
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© 2026 KML 技术博客</span>
+      <span>Powered by GitHub Pages</span>
+    </footer>
+  </body>
+</html>
