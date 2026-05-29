@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>关于 YOLO 分类模型在工业中的运用 - 鱼头大王的博客</title>
+    <meta
+      name="description"
+      content="记录 YOLO26n-cls 分类模型在工业小零件识别任务中的速度、适用场景和使用注意事项。"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="鱼头大王的博客首页">
+        <img src="/assets/fish-head.svg" alt="" />
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a class="active" href="/vision/">机器视觉</a>
+        <a href="/mechanical/">机械设计</a>
+        <a href="/electrical/">电气控制</a>
+        <a href="/posts/">文章</a>
+        <a href="/about/">关于</a>
+      </nav>
+    </header>
+
+    <main>
+      <article class="post">
+        <a class="back-link" href="/vision/">返回机器视觉</a>
+        <p class="eyebrow">机器视觉 · 2026-05-29</p>
+        <h1>关于 YOLO 分类模型在工业中的运用</h1>
+        <p class="lead">
+          最近在工业小零件分类任务中使用 YOLO26n-cls 做识别测试。整体感觉是：在分类场景里，它比 YOLOv8
+          系列更轻量，速度更适合部署到普通工控机或轻量 CPU 平台上。
+        </p>
+
+        <h2>测试配置</h2>
+        <p>这次使用的是 YOLO26n-cls 分类模型，输入尺寸为 320 x 320。测试平台 CPU 为 AMD Ryzen 5 8600G。</p>
+        <p>
+          推理时按每批次 8 张图片处理，模型部分总耗时大约 10ms。加上图片读取、预处理和其他流程后，整体耗时也能控制在
+          20ms 以内。
+        </p>
+
+        <h2>适合的工业场景</h2>
+        <p>
+          这个速度对于工业中的大部分小零件分类任务已经比较够用。比如零件种类判断、方向分类、型号识别、是否混料等任务，只要分类边界清晰、图像采集稳定，YOLO26n-cls
+          可以作为一个轻量、快速的方案。
+        </p>
+
+        <h2>不适合直接做缺陷检测</h2>
+        <p>
+          需要注意的是，分类模型不太适合直接用于缺陷检测。缺陷检测通常依赖更细的局部纹理、边缘变化或微小异常，320 x 320
+          的输入尺寸可能会损失细节。
+        </p>
+        <p>
+          如果目标是划痕、崩边、脏污、压伤、裂纹这类缺陷，通常需要更高输入尺寸，或者改用检测、分割、异常检测等更合适的模型方案。
+        </p>
+
+        <h2>使用中的关键问题</h2>
+        <p>分类模型想要稳定，图像采集条件比模型本身更重要。实际使用时我觉得至少要注意两点。</p>
+        <ul>
+          <li>检测主体最好占整张图片的 80% 以上，主体太小会让模型学到过多背景信息。</li>
+          <li>图片一致性要尽量好，包括角度、距离、光照、背景、放置位置和裁切范围。</li>
+        </ul>
+
+        <h2>结论</h2>
+        <p>
+          对于小零件分类，YOLO26n-cls 是一个值得尝试的轻量方案。它的速度表现足够好，部署成本也比较低。但它更适合分类任务，不应该简单替代缺陷检测模型。
+        </p>
+        <p>
+          工业视觉里，模型只是其中一环。稳定的成像、合理的裁切、统一的拍照姿态，往往决定了分类模型能不能长期稳定运行。
+        </p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <span>© 2026 鱼头大王的博客</span>
+      <span><a href="/posts/">查看全部文章</a></span>
+    </footer>
+  </body>
+</html>
