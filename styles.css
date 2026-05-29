@@ -232,6 +232,66 @@ h1 {
   line-height: 1.15;
 }
 
+.contact-section {
+  padding-top: 64px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.contact-card {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 22px;
+  align-items: center;
+  min-height: 210px;
+  padding: 24px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+
+.contact-card h3 {
+  margin: 0 0 8px;
+  font-size: 24px;
+}
+
+.contact-card p {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+
+.wechat-qr,
+.contact-icon {
+  display: grid;
+  place-items: center;
+  width: 150px;
+  height: 150px;
+  background: #f2f5f1;
+  border: 1px solid var(--line);
+}
+
+.wechat-qr {
+  display: block;
+  object-fit: cover;
+}
+
+.contact-icon {
+  color: #fff;
+  background: var(--text);
+  font-size: 52px;
+  font-weight: 900;
+}
+
+.text-link {
+  display: inline-flex;
+  color: var(--accent-dark);
+  font-weight: 800;
+  border-bottom: 1px solid currentColor;
+}
+
 .article-list {
   display: grid;
   gap: 16px;
@@ -431,6 +491,10 @@ h1 {
   .topic-layout {
     grid-template-columns: 1fr;
   }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 560px) {
@@ -449,5 +513,9 @@ h1 {
 
   .button {
     width: 100%;
+  }
+
+  .contact-card {
+    grid-template-columns: 1fr;
   }
 }
